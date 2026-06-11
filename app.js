@@ -179,8 +179,12 @@ class MatchDisplayManager {
 
 // Inicializar la aplicación cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
+    // Obtener el ID de la URL si existe (ej. /?id=17)
+    const urlParams = new URLSearchParams(window.location.search);
+    const idFromUrl = urlParams.get('id');
+
     const displayManager = new MatchDisplayManager({
-        fixtureId: 9 // Se puede cambiar dinámicamente si se requiere
+        fixtureId: idFromUrl ? parseInt(idFromUrl) : 9 // Usa el ID de la URL, o 9 por defecto
     });
     
     displayManager.fetchInitialData();
