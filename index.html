@@ -64,8 +64,6 @@ h1 {
     position: relative;
     overflow: hidden;
     background-color: #000;
-    container-type: inline-size;
-    /* Para usar unidades cqw y escalar el texto */
 }
 
 /* Template sizing — controlled entirely by JS */
@@ -74,111 +72,112 @@ h1 {
 }
 
 /* Horizontal Template Specifics */
+/* La plantilla tiene 768x320 px, relacion 2.4:1. Si el alto es 100vh, el ancho seria 240vh. */
+/* 1cqw (del ancho 768) equivale aprox a: (1/768) * 100vh * 2.4 = 0.31vh */
 .template-box.horizontal .scoreboard {
     position: absolute;
-    top: 45%;
-    left: 57.3%;
+    top: 59%;
+    left: 78.3%;
     transform: translate(-50%, -50%) scale(0.7);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 43cqw;
-    border-radius: 2.6cqw;
-    transform: scale(0.7);
+    width: 92.4vh;
+    border-radius: 0.8vh;
 }
 
 .template-box.horizontal .team {
-    display: flex;
+display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1cqw;
+    gap: 0.31vh;
 }
 
 .template-box.horizontal .team img {
     border-radius: 50%;
-    width: 8.4cqw;
-    height: 8.4cqw;
-    border: 0.4cqw solid #ff4500;
-    /* box-shadow: 0 0 0 0.3cqw #000, 0 0 0 0.6cqw #ff4500, 0.5cqw 0.5cqw 1cqw rgba(0, 0, 0, 0.8); */
+    width: 23.6vh;
+    height: 21.6vh;
+    border: 1.12vh solid #ff4500;
     object-fit: cover;
     background-color: #fff;
 }
 
 .template-box.horizontal .team-name {
     font-family: 'Impact', sans-serif;
-    font-size: 3.5cqw;
+    font-size: 9.1vh;
     font-style: italic;
     color: #fff;
-    -webkit-text-stroke: 0.15cqw #ff4500;
-    text-shadow: 0.2cqw 0.2cqw 0 #000, 0.3cqw 0.3cqw 0.5cqw rgba(0, 0, 0, 0.8);
+    -webkit-text-stroke: 0.3vh #ff4500;
+    text-shadow: 0.06vh 0.06vh 0 #000, 0.09vh 0.09vh 0.15vh rgba(0, 0, 0, 0.8);
     letter-spacing: 1px;
 }
 
 .template-box.horizontal .score {
-    font-family: 'Impact', sans-serif;
+font-family: 'Impact', sans-serif;
     display: flex;
     align-items: center;
-    gap: 2cqw;
-    font-size: 9cqw;
+    gap: 1.62vh;
+    font-size: 17.8vh;
     color: #fff;
-    -webkit-text-stroke: 0.25cqw #ff4500;
-    text-shadow: 0.3cqw 0.3cqw 0 #000, 0.5cqw 0.5cqw 0.8cqw rgba(0, 0, 0, 0.8);
-    margin-bottom: 7vh;
+    -webkit-text-stroke: 0.3vh #ff4500;
+    text-shadow: 0.09vh 0.09vh 0 #000, 0.15vh 0.15vh 0.25vh rgba(0, 0, 0, 0.8);
+    margin-bottom: 4vh;
     transform: scaleY(1.2);
 }
 
 /* Vertical Template Specifics */
+/* La plantilla tiene 600x810 px, relacion 0.74:1. Si el alto es 100vh, el ancho seria 74vh. */
+/* 1cqw (del ancho 600) equivale aprox a: (1/600)*74vh = 0.123vh */
+/* Pero dado que usamos scale(0.5) en el scoreboard, multiplicamos los tamaños por 2 para compensar */
 .template-box.vertical .scoreboard {
-    position: absolute;
-    top: 19.5%;
-    left: 29%;
-    transform: translate(-50%, -50%) scale(0.7);
+position: absolute;
+    top: 30%;
+    left: 68.5%;
+    transform: translate(-50%, -50%) scale(0.5);
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 6.6cqw;
-    width: 80cqw;
-    border-radius: 3.3cqw;
-    transform: scale(0.5);
+    gap: 5.1vh;
+    width: 85.4vh;
+    border-radius: 4vh;
 }
 
 .template-box.vertical .team {
-    display: flex;
+display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2.5cqw;
+    gap: 2.1vh;
 }
 
 .template-box.vertical .team img {
     border-radius: 50%;
-    width: 20cqw;
-    height: 20cqw;
-    border: 0.8cqw solid #ff4500;
-    /* box-shadow: 0 0 0 0.6cqw #000, 0 0 0 1.2cqw #ff4500, 1cqw 1cqw 2cqw rgba(0, 0, 0, 0.8); */
+    width: 14.6vh;
+    height: 13.6vh;
+    border: 0.5vh solid #ff4500;
     object-fit: cover;
     background-color: #fff;
 }
 
 .template-box.vertical .team-name {
     font-family: 'Impact', sans-serif;
-    font-size: 6cqw;
+    font-size: 6.4vh;
     font-style: italic;
     color: #fff;
-    -webkit-text-stroke: 0.2cqw #ff4500;
-    text-shadow: 0.3cqw 0.3cqw 0 #000, 0.4cqw 0.4cqw 0.6cqw rgba(0, 0, 0, 0.8);
+    -webkit-text-stroke: 0.25vh #ff4500;
+    text-shadow: 0.37vh 0.37vh 0 #000, 0.49vh 0.49vh 0.74vh rgba(0, 0, 0, 0.8);
     letter-spacing: 2px;
 }
 
 .template-box.vertical .score {
-    font-family: 'Impact', sans-serif;
+font-family: 'Impact', sans-serif;
     display: flex;
     align-items: center;
-    gap: 3.3cqw;
-    font-size: 16cqw;
+    gap: 4vh;
+    font-size: 11.7vh;
     color: #fff;
-    -webkit-text-stroke: 0.3cqw #ff4500;
-    text-shadow: 0.4cqw 0.4cqw 0 #000, 0.6cqw 0.6cqw 1cqw rgba(0, 0, 0, 0.8);
+    -webkit-text-stroke: 0.37vh #ff4500;
+    text-shadow: 0.49vh 0.49vh 0 #000, 0.74vh 0.74vh 1.23vh rgba(0, 0, 0, 0.8);
     margin-bottom: 7vh;
     transform: scaleY(1.2);
 }
