@@ -31,9 +31,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #000;
+    background-color: rgba(0,0,0,0.15);
     z-index: 9999;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    opacity: 0;
 }
 
 html, body {
@@ -234,23 +236,21 @@ h1 {
 
         window.checkAllLoaded = function() {
             if (window.appDataLoaded && fontsLoadedFlag) {
-                // Dar tiempo al navegador para renderizar las imágenes y fuentes
                 setTimeout(() => {
                     const loadingOverlay = document.getElementById('loading-overlay');
                     if (loadingOverlay) {
                         loadingOverlay.style.opacity = '0';
-                        setTimeout(() => { loadingOverlay.style.display = 'none'; }, 500);
+                        setTimeout(() => { loadingOverlay.style.display = 'none'; }, 300);
                     }
                 }, 100);
             }
         };
 
-        // Fallback: si después de 10 segundos algo falla en cargar, quitar la pantalla de carga
         setTimeout(() => {
             const loadingOverlay = document.getElementById('loading-overlay');
             if (loadingOverlay && loadingOverlay.style.display !== 'none') {
                 loadingOverlay.style.opacity = '0';
-                setTimeout(() => { loadingOverlay.style.display = 'none'; }, 500);
+                setTimeout(() => { loadingOverlay.style.display = 'none'; }, 300);
             }
         }, 10000);
 
@@ -384,11 +384,21 @@ class MatchDisplayManager {
                 const awayLogoUrl = visitante.bandera_url || visitante.bandera || visitante.logo;
                 const awayName = visitante.nombre || visitante.nombre_equipo || visitante.codigo_iso || 'Visitante';
 
-                if (homeLogoUrl && this.hor.homeLogo) this.hor.homeLogo.src = homeLogoUrl;
+                if (homeLogoUrl && this.hor.homeLogo) {
+                    this.hor.homeLogo.src = homeLogoUrl;
+                    this.hor.homeLogo.onerror = () => {
+                        this.hor.homeLogo.style.display = 'none';
+                    };
+                }
                 if (this.hor.homeName) this.hor.homeName.innerText = homeName;
                 if (this.hor.homeScore) this.hor.homeScore.innerText = this.currentHomeScore;
                 
-                if (awayLogoUrl && this.hor.awayLogo) this.hor.awayLogo.src = awayLogoUrl;
+                if (awayLogoUrl && this.hor.awayLogo) {
+                    this.hor.awayLogo.src = awayLogoUrl;
+                    this.hor.awayLogo.onerror = () => {
+                        this.hor.awayLogo.style.display = 'none';
+                    };
+                }
                 if (this.hor.awayName) this.hor.awayName.innerText = awayName;
                 if (this.hor.awayScore) this.hor.awayScore.innerText = this.currentAwayScore;
 
