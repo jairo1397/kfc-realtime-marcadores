@@ -100,100 +100,193 @@ h1 {
 
 .template-box.horizontal .team-left {
     position: absolute;
-    left: 55%;
-    top: 9%;
-    width: 20%;
-    height: 75%;
+    left: 74%;
+    top: 14%;
+    width: 15%;
+    height: 60%;
     transform: translateX(-50%);
-}
-
-.template-box.horizontal .team-left .country {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    text-align: center;
-    font-size: clamp(1.2rem, 2.3vw, 3rem);
-    font-weight: 800;
-    color: var(--country-color, #fff);
-    font-family: 'SelectionNameFont', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-}
-
-.template-box.horizontal .team-left .flag {
-    position: absolute;
-    top: 12%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: clamp(8.5rem, 11vw, 13rem);
-    height: clamp(5rem, 6.8vw, 7.2rem);
-    max-width: 13rem;
-    max-height: 7.2rem;
-    object-fit: fill;
-    display: block;
-}
-
-.template-box.horizontal .team-left .score {
-    position: absolute;
-    top: 47%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: clamp(11.5rem, 10vw, 13.5rem);
-    font-weight: 800;
-    color: var(--score-color, #fff);
-    line-height: 1;
-    font-family: 'ScoreFont', sans-serif;
 }
 
 .template-box.horizontal .team-right {
     position: absolute;
-    left: 81%;
-    top: 9%;
-    width: 20%;
-    height: 75%;
+    left: 88%;
+    top: 14%;
+    width: 15%;
+    height: 60%;
     transform: translateX(-50%);
 }
 
+.template-box.horizontal .team-left .country,
 .template-box.horizontal .team-right .country {
     position: absolute;
-    top: 0;
+    top: -11px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) scale(1, 2.8);
+    transform-origin: top center;
     width: 100%;
     text-align: center;
-    font-size: clamp(1.2rem, 2.3vw, 3rem);
+    font-size: clamp(0.8rem, 1.5vw, 2rem);
     font-weight: 800;
-    color: var(--country-color, #fff);
+    color: white;
     font-family: 'SelectionNameFont', sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.04em;
 }
 
+.template-box.horizontal .team-left .flag,
 .template-box.horizontal .team-right .flag {
     position: absolute;
-    top: 12%;
+    top: 25%;
     left: 50%;
     transform: translateX(-50%);
-    width: clamp(8.5rem, 11vw, 13rem);
-    height: clamp(5rem, 6.8vw, 7.2rem);
-    max-width: 13rem;
-    max-height: 7.2rem;
-    object-fit: fill;
+    width: clamp(4.5rem, 5vw, 6rem);
+    aspect-ratio: 1 / 1;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
     display: block;
 }
 
+.template-box.horizontal .team-left .score,
 .template-box.horizontal .team-right .score {
     position: absolute;
-    top: 47%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: clamp(11.5rem, 10vw, 13.5rem);
+    top: 59%;
+    left: 49%;
+    transform: translateX(-50%) scale(0.75, 3.2);
+    transform-origin: top center;
+    font-size: clamp(2rem, 5vw, 6rem);
     font-weight: 800;
-    color: var(--score-color, #fff);
+    color: white;
     line-height: 1;
     font-family: 'ScoreFont', sans-serif;
+}
+
+.template-box.horizontal .score-separator {
+    position: absolute;
+    left: 81%;
+    top: 59%;
+    transform: translateX(-50%) scale(2.75, 1.8);
+    transform-origin: top center;
+    font-size: clamp(2rem, 3vw, 4rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1;
+    font-family: 'ScoreFont', sans-serif;
+}
+
+/* Layout tipo overlay vertical */
+.template-box.vertical .scoreboard {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    aspect-ratio: 600 / 810;
+    overflow: hidden;
+    container-type: inline-size;
+}
+
+.template-box.vertical .bg {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    display: block;
+}
+
+.template-box.vertical .team-left,
+.template-box.vertical .team-right {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+}
+
+.template-box.vertical .country {
+    position: absolute;
+    transform: translateX(-50%) scale(0.75, 2.6);
+    transform-origin: top center;
+    width: 100%;
+    text-align: center;
+    font-size: 3.5cqw;
+    font-weight: 800;
+    color: white;
+    font-family: 'SelectionNameFont', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.template-box.vertical .flag {
+    position: absolute;
+    transform: translateX(-50%);
+    width: 17cqw;
+    height: 17cqw;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+.template-box.vertical .score {
+    position: absolute;
+    transform: translateX(-50%) scale(0.75, 2.8);
+    transform-origin: top center;
+    font-size: 10cqw;
+    font-weight: 800;
+    color: white;
+    line-height: 1;
+    font-family: 'ScoreFont', sans-serif;
+}
+
+.template-box.vertical .score-separator {
+    position: absolute;
+    left: 51%;
+    top: 34%;
+    transform: translateX(-50%) scale(2.75, 1.8);
+    transform-origin: top center;
+    font-size: 7cqw;
+    font-weight: 800;
+    color: white;
+    line-height: 1;
+    font-family: 'ScoreFont', sans-serif;
+}
+
+/* Posiciones especificas Team Left */
+.template-box.vertical .team-left .flag {
+    top: 31%;
+    left: 23%;
+}
+.template-box.vertical .team-left .country {
+    top: 43%;
+    left: 23%;
+}
+.template-box.vertical .team-left .score {
+    top: 29%;
+    left: 39%;
+}
+
+/* Posiciones especificas Team Right */
+.template-box.vertical .team-right .flag {
+    top: 31%;
+    left: 77%;
+}
+.template-box.vertical .team-right .country {
+    top: 43%;
+    left: 78%;
+}
+.template-box.vertical .team-right .score {
+    top: 29%;
+    left: 62%;
+}
+
+@keyframes showElements {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.team-left, .team-right, .score-separator {
+    opacity: 0;
+    animation: showElements 1.5s step-end forwards;
 }
 </style>
 </head>
@@ -201,9 +294,9 @@ h1 {
     <div id="loading-overlay"></div>
     <h1>Visualización de Resultados</h1>
     
-    <div class="template-box horizontal active-template">
+    <div class="template-box horizontal" id="box-hor">
         <div class="scoreboard" id="scoreboard-hor" style="display: none;">
-            <img src="assets/plantilla-curazao.png" class="bg" alt="Plantilla Curazao">
+            <video src="assets/KFC - 768 x 320 - MARCADOR PACHO_4.mp4" class="bg" autoplay loop muted playsinline></video>
 
             <div class="team team-left">
                 <div id="home-name-hor" class="country"></div>
@@ -213,11 +306,37 @@ h1 {
                 </div>
             </div>
 
+            <div class="score-separator">-</div>
+
             <div class="team team-right">
                 <div id="away-name-hor" class="country"></div>
                 <img id="away-logo-hor" src="" class="flag" alt="Visitante">
                 <div class="score">
                     <span id="away-score-hor">-</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="template-box vertical" id="box-ver">
+        <div class="scoreboard" id="scoreboard-ver" style="display: none;">
+            <video src="assets/KFC - 600 x 810 - MARCADOR PACHO.mp4" class="bg" autoplay loop muted playsinline></video>
+
+            <div class="team team-left">
+                <div id="home-name-ver" class="country"></div>
+                <img id="home-logo-ver" src="" class="flag" alt="Local">
+                <div class="score">
+                    <span id="home-score-ver">-</span>
+                </div>
+            </div>
+
+            <div class="score-separator">-</div>
+
+            <div class="team team-right">
+                <div id="away-name-ver" class="country"></div>
+                <img id="away-logo-ver" src="" class="flag" alt="Visitante">
+                <div class="score">
+                    <span id="away-score-ver">-</span>
                 </div>
             </div>
         </div>
@@ -254,20 +373,39 @@ h1 {
             }
         }, 10000);
 
-        // ─── ESCALADO DE PLANTILLA HORIZONTAL ───────────────────────────────
-        const horBox = document.querySelector('.template-box.horizontal');
+        // ─── ESCALADO DE PLANTILLA ───────────────────────────────
+        const horBox = document.getElementById('box-hor');
+        const verBox = document.getElementById('box-ver');
 
         function applyTemplate() {
             const W = window.innerWidth;
             const H = window.innerHeight;
-            const ratio = 768 / 320;
-            let w = W;
-            let h = w / ratio;
-            if (h > H) { h = H; w = h * ratio; }
 
-            horBox.classList.add('active-template');
-            horBox.style.width = w + 'px';
-            horBox.style.height = h + 'px';
+            if (W > H) {
+                // Horizontal
+                const ratio = 768 / 320;
+                let w = W;
+                let h = w / ratio;
+                if (h > H) { h = H; w = h * ratio; }
+
+                horBox.classList.add('active-template');
+                verBox.classList.remove('active-template');
+
+                horBox.style.width = w + 'px';
+                horBox.style.height = h + 'px';
+            } else {
+                // Vertical
+                const ratio = 600 / 810;
+                let h = H;
+                let w = h * ratio;
+                if (w > W) { w = W; h = w / ratio; }
+
+                verBox.classList.add('active-template');
+                horBox.classList.remove('active-template');
+
+                verBox.style.width = w + 'px';
+                verBox.style.height = h + 'px';
+            }
         }
 
         applyTemplate();
@@ -287,6 +425,15 @@ class MatchDisplayManager {
             awayLogo: document.getElementById('away-logo-hor'),
             awayName: document.getElementById('away-name-hor'),
             awayScore: document.getElementById('away-score-hor')
+        };
+        this.ver = {
+            scoreboard: document.getElementById('scoreboard-ver'),
+            homeLogo: document.getElementById('home-logo-ver'),
+            homeName: document.getElementById('home-name-ver'),
+            homeScore: document.getElementById('home-score-ver'),
+            awayLogo: document.getElementById('away-logo-ver'),
+            awayName: document.getElementById('away-name-ver'),
+            awayScore: document.getElementById('away-score-ver')
         };
 
         this.currentHomeScore = 0;
@@ -308,21 +455,7 @@ class MatchDisplayManager {
         }
     }
 
-    getTemplateImageUrl() {
-        return this.templateType === 2
-            ? 'assets/plantilla-tiendas-efe.png'
-            : 'assets/plantilla-curazao.png';
-    }
-
     applyTemplateType() {
-        const imageUrl = this.getTemplateImageUrl();
-        const templateName = this.templateType === 2 ? 'Tiendas EFE' : 'Curazao';
-
-        document.querySelectorAll('.bg').forEach((img) => {
-            img.src = imageUrl;
-            img.alt = `Plantilla ${templateName}`;
-        });
-
         this.applyTemplateColors();
     }
 
@@ -377,30 +510,43 @@ class MatchDisplayManager {
 
                 // Make scoreboard visible
                 if (this.hor.scoreboard) this.hor.scoreboard.style.display = 'flex';
+                if (this.ver.scoreboard) this.ver.scoreboard.style.display = 'flex';
                 
                 const homeLogoUrl = local.bandera_url || local.bandera || local.logo;
-                const homeName = local.nombre || local.nombre_equipo || local.codigo_iso || 'Local';
+                const homeName = local.codigo_iso || local.nombre || local.nombre_equipo || 'Local';
                 
                 const awayLogoUrl = visitante.bandera_url || visitante.bandera || visitante.logo;
-                const awayName = visitante.nombre || visitante.nombre_equipo || visitante.codigo_iso || 'Visitante';
+                const awayName = visitante.codigo_iso || visitante.nombre || visitante.nombre_equipo || 'Visitante';
 
-                if (homeLogoUrl && this.hor.homeLogo) {
-                    this.hor.homeLogo.src = homeLogoUrl;
-                    this.hor.homeLogo.onerror = () => {
-                        this.hor.homeLogo.style.display = 'none';
-                    };
+                if (homeLogoUrl) {
+                    if (this.hor.homeLogo) {
+                        this.hor.homeLogo.src = homeLogoUrl;
+                        this.hor.homeLogo.onerror = () => { this.hor.homeLogo.style.display = 'none'; };
+                    }
+                    if (this.ver.homeLogo) {
+                        this.ver.homeLogo.src = homeLogoUrl;
+                        this.ver.homeLogo.onerror = () => { this.ver.homeLogo.style.display = 'none'; };
+                    }
                 }
                 if (this.hor.homeName) this.hor.homeName.innerText = homeName;
+                if (this.ver.homeName) this.ver.homeName.innerText = homeName;
                 if (this.hor.homeScore) this.hor.homeScore.innerText = this.currentHomeScore;
+                if (this.ver.homeScore) this.ver.homeScore.innerText = this.currentHomeScore;
                 
-                if (awayLogoUrl && this.hor.awayLogo) {
-                    this.hor.awayLogo.src = awayLogoUrl;
-                    this.hor.awayLogo.onerror = () => {
-                        this.hor.awayLogo.style.display = 'none';
-                    };
+                if (awayLogoUrl) {
+                    if (this.hor.awayLogo) {
+                        this.hor.awayLogo.src = awayLogoUrl;
+                        this.hor.awayLogo.onerror = () => { this.hor.awayLogo.style.display = 'none'; };
+                    }
+                    if (this.ver.awayLogo) {
+                        this.ver.awayLogo.src = awayLogoUrl;
+                        this.ver.awayLogo.onerror = () => { this.ver.awayLogo.style.display = 'none'; };
+                    }
                 }
                 if (this.hor.awayName) this.hor.awayName.innerText = awayName;
+                if (this.ver.awayName) this.ver.awayName.innerText = awayName;
                 if (this.hor.awayScore) this.hor.awayScore.innerText = this.currentAwayScore;
+                if (this.ver.awayScore) this.ver.awayScore.innerText = this.currentAwayScore;
 
                 localStorage.setItem(`alac_home_${this.fixtureId}`, nuevoHome);
                 localStorage.setItem(`alac_away_${this.fixtureId}`, nuevoAway);
@@ -481,6 +627,8 @@ class MatchDisplayManager {
 
         if (this.hor.homeScore) this.hor.homeScore.innerText = this.currentHomeScore;
         if (this.hor.awayScore) this.hor.awayScore.innerText = this.currentAwayScore;
+        if (this.ver.homeScore) this.ver.homeScore.innerText = this.currentHomeScore;
+        if (this.ver.awayScore) this.ver.awayScore.innerText = this.currentAwayScore;
     }
 
     startPolling() {
