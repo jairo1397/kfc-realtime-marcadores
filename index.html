@@ -7,15 +7,15 @@
     <style>
 @font-face {
     font-family: 'SelectionNameFont';
-    src: url('assets/fonts/FUENTE NOMBRE DE LAS SELECCIONES/poppins.extrabold.ttf') format('truetype');
-    font-weight: 800;
+    src: url('assets/fonts/Fontspring-DEMO-flexible-h1000w200.otf') format('opentype');
+    font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'ScoreFont';
-    src: url('assets/fonts/FUENTE SCORE/poppins.semibold.ttf') format('truetype');
-    font-weight: 600;
+    src: url('assets/fonts/Fontspring-DEMO-flexible-h1000w200.otf') format('opentype');
+    font-weight: normal;
     font-style: normal;
 }
 
@@ -119,13 +119,13 @@ h1 {
 .template-box.horizontal .team-left .country,
 .template-box.horizontal .team-right .country {
     position: absolute;
-    top: -11px;
+    top: -8px;
     left: 50%;
-    transform: translateX(-50%) scale(1, 2.8);
+    transform: translateX(-50%) scale(1.4, 1.8);
     transform-origin: top center;
     width: 100%;
     text-align: center;
-    font-size: clamp(0.8rem, 1.5vw, 2rem);
+    font-size: clamp(1.5rem, 1.5vw, 2rem);
     font-weight: 800;
     color: white;
     font-family: 'SelectionNameFont', sans-serif;
@@ -150,11 +150,11 @@ h1 {
 .template-box.horizontal .team-left .score,
 .template-box.horizontal .team-right .score {
     position: absolute;
-    top: 59%;
+    top: 72%;
     left: 49%;
-    transform: translateX(-50%) scale(0.75, 3.2);
+    transform: translateX(-50%) scale(1, 1.2);
     transform-origin: top center;
-    font-size: clamp(2rem, 5vw, 6rem);
+    font-size: clamp(4rem, 5vw, 6rem);
     font-weight: 800;
     color: white;
     line-height: 1;
@@ -171,7 +171,7 @@ h1 {
     font-weight: 800;
     color: white;
     line-height: 1;
-    font-family: 'ScoreFont', sans-serif;
+    font-family: none !important;
 }
 
 /* Layout tipo overlay vertical */
@@ -205,11 +205,11 @@ h1 {
 
 .template-box.vertical .country {
     position: absolute;
-    transform: translateX(-50%) scale(0.75, 2.6);
+    transform: translateX(-50%) scale(1, 1.2);
     transform-origin: top center;
     width: 100%;
     text-align: center;
-    font-size: 3.5cqw;
+    font-size: 5.5cqw;
     font-weight: 800;
     color: white;
     font-family: 'SelectionNameFont', sans-serif;
@@ -229,9 +229,9 @@ h1 {
 
 .template-box.vertical .score {
     position: absolute;
-    transform: translateX(-50%) scale(0.75, 2.8);
+    transform: translateX(-50%) scale(1, 1.5);
     transform-origin: top center;
-    font-size: 10cqw;
+    font-size: 13cqw;
     font-weight: 800;
     color: white;
     line-height: 1;
@@ -248,7 +248,7 @@ h1 {
     font-weight: 800;
     color: white;
     line-height: 1;
-    font-family: 'ScoreFont', sans-serif;
+    font-family: 'Times New Roman', Times, serif !important;
 }
 
 /* Posiciones especificas Team Left */
@@ -257,11 +257,11 @@ h1 {
     left: 23%;
 }
 .template-box.vertical .team-left .country {
-    top: 43%;
+    top: 44%;
     left: 23%;
 }
 .template-box.vertical .team-left .score {
-    top: 29%;
+    top: 32%;
     left: 39%;
 }
 
@@ -271,11 +271,11 @@ h1 {
     left: 77%;
 }
 .template-box.vertical .team-right .country {
-    top: 43%;
+    top: 44%;
     left: 78%;
 }
 .template-box.vertical .team-right .score {
-    top: 29%;
+    top: 32%;
     left: 62%;
 }
 
